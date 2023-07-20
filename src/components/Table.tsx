@@ -28,24 +28,9 @@ const Table = () => {
     { field: "lastId" },
     { field: "count" },
   ]);
-  const columnConfig = useMemo(
-    () => ({
-      sortable: true,
-    }),
-    []
-  );
-  const containerStyle = useMemo(
-    () => ({ width: "100%", height: "100vh" }),
-    []
-  );
-  const gridStyle = useMemo(
-    () => ({
-      height: "100%",
-      width: "100%",
-    }),
-    []
-  );
+
   const [rowData, setRowData] = useState([]);
+
   useEffect(() => {
     const getData = async () => {
       try {
@@ -61,6 +46,26 @@ const Table = () => {
     getData();
   }, []);
 
+  const columnConfig = useMemo(
+    () => ({
+      sortable: true,
+    }),
+    []
+  );
+
+  const containerStyle = useMemo(
+    () => ({ width: "100%", height: "100vh" }),
+    []
+  );
+
+  const gridStyle = useMemo(
+    () => ({
+      height: "100%",
+      width: "100%",
+    }),
+    []
+  );
+
   return (
     <div style={containerStyle}>
       <div className="ag-theme-alpine-dark" style={gridStyle}>
@@ -70,6 +75,7 @@ const Table = () => {
           defaultColDef={columnConfig}
           animateRows={true}
           pagination={true}
+          paginationAutoPageSize={true}
         />
       </div>
     </div>
