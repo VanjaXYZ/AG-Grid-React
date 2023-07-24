@@ -87,7 +87,6 @@ const Table = () => {
     { field: "count" },
   ];
 
-  // const rowData: TableData[] = [];
   const loadingCellRenderer = useMemo(() => {
     return CustomLoading;
   }, []);
@@ -115,33 +114,19 @@ const Table = () => {
     }
   }, []);
 
-  const columnConfig = useMemo(
-    () => ({
-      sortable: true,
-    }),
-    []
-  );
-
-  const containerStyle = useMemo(
-    () => ({ width: "100%", height: "100vh" }),
-    []
-  );
-
-  const gridStyle = useMemo(
-    () => ({
-      height: "100%",
-      width: "100%",
-    }),
-    []
-  );
+  const columnConfig = {
+    sortable: true,
+  };
 
   return (
-    <div style={containerStyle}>
-      <div className="ag-theme-alpine-dark" style={gridStyle}>
+    <div style={{ width: "100%", height: "100vh" }}>
+      <div
+        className="ag-theme-alpine-dark"
+        style={{ width: "100%", height: "100%" }}
+      >
         <AgGridReact
           columnDefs={columnDefs}
           defaultColDef={columnConfig}
-          // rowData={rowData}
           loadingCellRenderer={loadingCellRenderer}
           loadingCellRendererParams={loadingCellRendererParams}
           cacheBlockSize={20}
