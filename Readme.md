@@ -17,6 +17,7 @@ sakriti animaciju i prikazati podatke u tabeli
 - timestamp podatke prikazati kao validan datum DD/MM/YYYY
 - dodati paginaciju na tabelu
 ## Start application
+In terminal type:
 1. `npm run build`,
 2. `npm run preview`
 ## Approach & Methodology
