@@ -12,35 +12,39 @@ import {
   IServerSideDatasource,
   IServerSideGetRowsRequest,
 } from "ag-grid-community";
-import CustomLoading from "./CustomLoading";
+import CustomLoading from "./customLoading";
 const getServerSideDatasource: (server: any) => IServerSideDatasource = (
   server: any
 ) => {
   return {
-    getRows: (params: any) => {
-      setTimeout(() => {
-        const response = server.getResponse(params.request);
-        if (response.success) {
-          params.success({
-            rowData: response.rows,
-            rowCount: response.lastRow,
-          });
-        } else {
-          params.fail();
+    getRows: async (params: any) => {
+      setTimeout(async () => {
+        try {
+          const response = await server.getResponse(params.request);
+          if (response.success) {
+            params.success({
+              rowData: response.rows,
+              rowCount: response.lastRow,
+            });
+          } else {
+            params.fail();
+          }
+        } catch (error) {
+          console.error(error);
         }
-      }, 1000);
+      }, 2000);
     },
   };
 };
+
 const getFakeServer: (allData: any[]) => any = (allData: any[]) => {
   return {
     getResponse: (request: IServerSideGetRowsRequest) => {
-      console.log(
-        "asking for rows: " + request.startRow + " to " + request.endRow
-      );
-      const rowsThisPage = allData.slice(request.startRow, request.endRow);
-      const lastRow =
-        allData.length <= (request.endRow || 0) ? allData.length : -1;
+      const startRow = request.startRow || 0;
+      const endRow = request.endRow || allData.length;
+      console.log("asking for rows: " + startRow + " to " + endRow);
+      const rowsThisPage = allData.slice(startRow, endRow);
+      const lastRow = allData.length <= endRow ? allData.length : -1;
       return {
         success: true,
         rows: rowsThisPage,
@@ -83,7 +87,7 @@ const Table = () => {
     { field: "count" },
   ];
 
-  const rowData: TableData[] = [];
+  // const rowData: TableData[] = [];
   const loadingCellRenderer = useMemo(() => {
     return CustomLoading;
   }, []);
@@ -137,7 +141,7 @@ const Table = () => {
         <AgGridReact
           columnDefs={columnDefs}
           defaultColDef={columnConfig}
-          rowData={rowData}
+          // rowData={rowData}
           loadingCellRenderer={loadingCellRenderer}
           loadingCellRendererParams={loadingCellRendererParams}
           cacheBlockSize={20}
