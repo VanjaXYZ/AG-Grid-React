@@ -1,6 +1,6 @@
 # Job Application Task - React Junior 
-Name: Vanja Šukurma,
-Position: React Junior
+- Name: Vanja Šukurma,
+- Position: React Junior
 ## Task Description
 Kreirati novi React projekat (koristiti v17). U projekat dodati AG Grid biblioteku (koristiti
 Community v27). Sa lokacije https://data.binance.com/api/v3/ticker/24hr skinuti niz json objekata.
