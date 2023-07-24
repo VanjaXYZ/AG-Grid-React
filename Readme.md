@@ -32,4 +32,10 @@ Approximately 9-10 hours of active work. Bare in mind that I haven't used AG Gri
 ## Image of application
 ### Initial look:
 ![image](https://github.com/VanjaXYZ/AG-Grid-React/assets/95103431/ca7a5c2b-6377-469a-9e7d-40c5878c1bfd)
+### Timestamps:
+![image](https://github.com/VanjaXYZ/AG-Grid-React/assets/95103431/df0f4bab-ef18-4e71-ab8b-2e9faadd5a3f)
+### Fetching data:
+![image](https://github.com/VanjaXYZ/AG-Grid-React/assets/95103431/af5ab141-3e60-4fd9-b55b-13b049fc433e)
+
+
 
