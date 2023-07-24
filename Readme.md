@@ -30,4 +30,6 @@ A lot of task steps could be done by reading the AG Grid documentation alone and
 ## Time spent
 Approximately 9-10 hours of active work. Bare in mind that I haven't used AG Grid before so it took a lot of time learning, reading and watching videos about it.
 ## Image of application
+### Initial look:
 ![image](https://github.com/VanjaXYZ/AG-Grid-React/assets/95103431/ca7a5c2b-6377-469a-9e7d-40c5878c1bfd)
+
