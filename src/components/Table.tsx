@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine-dark.css";
+import { TableData } from "../interfaces";
+import moment from "moment";
 
 const Table = () => {
   const [columnDefs, setColumnDefs] = useState([
@@ -22,14 +24,22 @@ const Table = () => {
     { field: "lowPrice" },
     { field: "volume" },
     { field: "quoteVolume" },
-    { field: "openTime" },
-    { field: "closeTime" },
+    {
+      field: "openTime",
+      valueFormatter: (params: any) =>
+        moment(params.value).format("DD MMM, YYYY"),
+    },
+    {
+      field: "closeTime",
+      valueFormatter: (params: any) =>
+        moment(params.value).format("DD MMM, YYYY"),
+    },
     { field: "firstId" },
     { field: "lastId" },
     { field: "count" },
   ]);
 
-  const [rowData, setRowData] = useState([]);
+  const [rowData, setRowData] = useState<TableData[]>([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -37,8 +47,10 @@ const Table = () => {
         const response = await axios.get(
           "https://data.binance.com/api/v3/ticker/24hr"
         );
-        console.log(response.data);
-        setRowData(response.data);
+        const { data }: { data: TableData[] } = response;
+
+        console.log(data);
+        setRowData(data);
       } catch (error) {
         console.error(error);
       }
