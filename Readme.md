@@ -16,9 +16,13 @@ Pozeljno:
 sakriti animaciju i prikazati podatke u tabeli
 - timestamp podatke prikazati kao validan datum DD/MM/YYYY
 - dodati paginaciju na tabelu
+## Built with
+1. React + Vite,
+2. Axios,
+3. Moment.js
 ## Start application
 In terminal type:
 1. `npm run build`,
 2. `npm run preview`
 ## Approach & Methodology
-A lot of task steps could be done by using the AG-Grid documentation alone. Few things i did that weren't in docs are moment.js library for extracting timestamps and formatting it to dd/mmm/yyyy format.
+A lot of task steps could be done by using the AG-Grid documentation alone. Few things i did that weren't in docs are moment.js library for extracting timestamps and formatting it to dd/mmm/yyyy format. Also used Axios for fetching data from server.
