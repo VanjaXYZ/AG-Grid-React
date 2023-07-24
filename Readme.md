@@ -17,9 +17,10 @@ sakriti animaciju i prikazati podatke u tabeli
 - timestamp podatke prikazati kao validan datum DD/MM/YYYY
 - dodati paginaciju na tabelu
 ## Built with
-1. React + Vite,
-2. Axios,
-3. Moment.js
+1. React v17 + Vite,
+2. AG Grid library,
+3. Axios,
+4. Moment.js
 ## Start application
 In terminal type:
 1. `npm run build`,
