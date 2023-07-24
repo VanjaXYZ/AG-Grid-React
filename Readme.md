@@ -26,4 +26,4 @@ In terminal type:
 1. `npm run build`,
 2. `npm run preview`
 ## Approach & Methodology
-A lot of task steps could be done by using the AG-Grid documentation alone. Few things i did that weren't in docs are moment.js library for extracting timestamps and formatting it to dd/mmm/yyyy format. Also used Axios for fetching data from server.
+A lot of task steps could be done by reading the AG Grid documentation alone and watching few videos provided by createors of AG Grid. Few things i did that weren't in docs are moment.js library for extracting timestamps and formatting it to dd/mmm/yyyy format. Also used Axios for fetching data from server.
