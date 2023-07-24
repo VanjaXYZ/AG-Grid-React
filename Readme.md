@@ -16,3 +16,4 @@ Pozeljno:
 sakriti animaciju i prikazati podatke u tabeli
 - timestamp podatke prikazati kao validan datum DD/MM/YYYY
 - dodati paginaciju na tabelu
+## Approach & Methodology
