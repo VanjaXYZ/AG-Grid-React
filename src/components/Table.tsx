@@ -1,12 +1,11 @@
 import { AgGridReact } from "ag-grid-react";
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useCallback } from "react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine-dark.css";
 import { TableData } from "../interfaces";
 import moment from "moment";
 import "ag-grid-enterprise";
 import axios from "axios";
-
 import {
   ColDef,
   GridReadyEvent,
@@ -52,7 +51,7 @@ const getFakeServer: (allData: any[]) => any = (allData: any[]) => {
 };
 
 const Table = () => {
-  const [columnDefs, setColumnDefs] = useState<ColDef[]>([
+  const columnDefs: ColDef[] = [
     { field: "symbol" },
     { field: "priceChange" },
     { field: "priceChangePercent" },
@@ -82,9 +81,9 @@ const Table = () => {
     { field: "firstId" },
     { field: "lastId" },
     { field: "count" },
-  ]);
+  ];
 
-  const [rowData, setRowData] = useState<TableData[]>([]);
+  const rowData: TableData[] = [];
   const loadingCellRenderer = useMemo(() => {
     return CustomLoading;
   }, []);
