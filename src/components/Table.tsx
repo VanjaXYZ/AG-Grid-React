@@ -100,7 +100,6 @@ const Table = () => {
       );
       const { data }: { data: TableData[] } = response;
       let idSequence = 0;
-      console.log(data);
       data.forEach((item: any) => {
         item.id = idSequence++;
       });
