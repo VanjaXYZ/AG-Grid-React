@@ -4,7 +4,7 @@
 ## Built with
 1. React v17 + Vite,
 2. AG Grid library,
-3. TypeScript
+3. TypeScript,
 4. Axios,
 5. Moment.js
 ## Start application
