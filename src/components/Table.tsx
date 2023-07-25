@@ -6,6 +6,7 @@ import { TableData } from "../interfaces";
 import moment from "moment";
 import "ag-grid-enterprise";
 import axios from "axios";
+import "./Table.css";
 import {
   ColDef,
   GridReadyEvent,
@@ -18,21 +19,18 @@ const getServerSideDatasource: (server: any) => IServerSideDatasource = (
 ) => {
   return {
     getRows: async (params: any) => {
-      setTimeout(async () => {
-        try {
-          const response = await server.getResponse(params.request);
-          if (response.success) {
-            params.success({
-              rowData: response.rows,
-              rowCount: response.lastRow,
-            });
-          } else {
-            params.fail();
-          }
-        } catch (error) {
-          console.error(error);
+      try {
+        const response = await server.getResponse(params.request);
+        if (response.success) {
+          params.success({
+            rowData: response.rows,
+            rowCount: response.lastRow,
+          });
         }
-      }, 2000);
+      } catch (error) {
+        params.fail();
+        console.error(error);
+      }
     },
   };
 };
@@ -119,11 +117,8 @@ const Table = () => {
   };
 
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
-      <div
-        className="ag-theme-alpine-dark"
-        style={{ width: "100%", height: "100%" }}
-      >
+    <div className="container">
+      <div className="ag-theme-alpine-dark sub-container">
         <AgGridReact
           columnDefs={columnDefs}
           defaultColDef={columnConfig}
