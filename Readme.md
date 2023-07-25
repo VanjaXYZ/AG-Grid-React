@@ -19,8 +19,9 @@ sakriti animaciju i prikazati podatke u tabeli
 ## Built with
 1. React v17 + Vite,
 2. AG Grid library,
-3. Axios,
-4. Moment.js
+3. TypeScript
+4. Axios,
+5. Moment.js
 ## Start application
 In terminal type:
 1. `npm run build`,
