@@ -52,39 +52,38 @@ const getFakeServer: (allData: any[]) => any = (allData: any[]) => {
   };
 };
 
+const columnDefs: ColDef[] = [
+  { field: "symbol" },
+  { field: "priceChange" },
+  { field: "priceChangePercent" },
+  { field: "weightedAvgPrice" },
+  { field: "prevClosePrice" },
+  { field: "lastPrice" },
+  { field: "lastQty" },
+  { field: "bidPrice" },
+  { field: "bidQty" },
+  { field: "askPrice" },
+  { field: "askQty" },
+  { field: "openPrice" },
+  { field: "highPrice" },
+  { field: "lowPrice" },
+  { field: "volume" },
+  { field: "quoteVolume" },
+  {
+    field: "openTime",
+    valueFormatter: (params: any) =>
+      moment(params.value).format("DD MMM, YYYY"),
+  },
+  {
+    field: "closeTime",
+    valueFormatter: (params: any) =>
+      moment(params.value).format("DD MMM, YYYY"),
+  },
+  { field: "firstId" },
+  { field: "lastId" },
+  { field: "count" },
+];
 const Table = () => {
-  const columnDefs: ColDef[] = [
-    { field: "symbol" },
-    { field: "priceChange" },
-    { field: "priceChangePercent" },
-    { field: "weightedAvgPrice" },
-    { field: "prevClosePrice" },
-    { field: "lastPrice" },
-    { field: "lastQty" },
-    { field: "bidPrice" },
-    { field: "bidQty" },
-    { field: "askPrice" },
-    { field: "askQty" },
-    { field: "openPrice" },
-    { field: "highPrice" },
-    { field: "lowPrice" },
-    { field: "volume" },
-    { field: "quoteVolume" },
-    {
-      field: "openTime",
-      valueFormatter: (params: any) =>
-        moment(params.value).format("DD MMM, YYYY"),
-    },
-    {
-      field: "closeTime",
-      valueFormatter: (params: any) =>
-        moment(params.value).format("DD MMM, YYYY"),
-    },
-    { field: "firstId" },
-    { field: "lastId" },
-    { field: "count" },
-  ];
-
   const loadingCellRenderer = useMemo(() => {
     return CustomLoading;
   }, []);
