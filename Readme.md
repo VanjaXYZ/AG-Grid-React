@@ -1,6 +1,3 @@
-# Job Application Task - React Junior 
-- Name: Vanja Šukurma,
-- Position: React Junior
 ## Built with
 1. React v17 + Vite,
 2. AG Grid library,
